@@ -16,6 +16,10 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px 0;
 }
 
 h1,
@@ -51,14 +55,6 @@ ol {
 }
 
 /*ОСНОВНОЕ*/
-
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 30px 0;
-  margin: 0;
-}
 
 .content {
   display: flex;
@@ -103,16 +99,12 @@ ol {
   padding-bottom: 5px;
 }
 
-/*не нужен.search-form__label {
-  width: fit-content;
-}*/
-
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
 
-.search-form__label-text{
+.search-form__label-text {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -152,7 +144,7 @@ ol {
   color: rgb(255 255 255 / 0.7) ;
 }
 
-.search-form__textfield:focus-visible{
+.search-form__textfield:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
@@ -225,8 +217,6 @@ ol {
 
 .content__details {
   width: 399px;
-  max-height: 534px;
-  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -237,7 +227,7 @@ ol {
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 
 .content__accent {
@@ -250,6 +240,10 @@ ol {
   overflow: auto;
 }
 
+.content__list {
+  width: fit-content;
+}
+
 /* ТЕМПЛЕЙТЫ */
 
 .cards-list-item-template {
@@ -258,16 +252,14 @@ ol {
 
 .content__list-item {
   width: 390px;
-  max-height: 103px;
-  height: 100%;
   margin-bottom: 30px;
-  box-sizing: border-box;
-  padding: 5px 3px;
+  padding: 2px 3px 0;
 }
 
 .content__card-link {
   display: block;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .content__card-link:hover {
@@ -275,9 +267,11 @@ ol {
   color: #fff;
 }
 
+/*не знаю нужно или нет - дублирует или нет, оно отдельно работает также
+ как и .content__card-link_current:active, которого нет в html
 .content__card-link:active .content__video-card-description-container {
   background-color: #545050;
-}
+}*/
 
 .content__card-link:focus .content__video-card {
   outline: none;
@@ -289,13 +283,16 @@ ol {
   outline: 1px solid #fff;
 }
 
-/*не нужен, если нужен не понятно зачем.content__card-link_current:active {
+.content__card-link_current:active { /*указан по ТЗ*/
   background-color: #545050;
-}*/
+}
 
 .content__video-card {
-  width: 390px;
+  max-width: 390px;
   display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .content__video-card-description-container {
@@ -311,6 +308,8 @@ ol {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  line-height: 100%;
+  padding-bottom: 6px;
 }
 
 .content__video-card-description {
@@ -322,19 +321,21 @@ ol {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  display: -webkit-box; 
-  -webkit-box-orient: vertical; 
-  -webkit-line-clamp: 4; 
-  line-clamp: 4; 
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
 }
 
 .content__video-card-thumbnail {
   width: 194px;
+  max-height: 103px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.more-button-template {  /*Не работает*/
+.more-button-template {
   display: flex;
 }
 

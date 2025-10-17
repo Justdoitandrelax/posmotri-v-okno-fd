@@ -286,10 +286,6 @@ ol {
   outline: 1px solid #fff;
 }
 
-/*.content__card-link_current { 
-  background-color: #545050;
-}*/
-
 .content__video-card {
   max-width: 390px;
   display: flex;

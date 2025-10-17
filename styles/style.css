@@ -256,10 +256,15 @@ ol {
   padding: 2px 3px 0;
 }
 
+.content__card-link_current { 
+  background-color: #545050;
+}
+
 .content__card-link {
   display: block;
   text-decoration: none;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .content__card-link:hover {
@@ -267,11 +272,9 @@ ol {
   color: #fff;
 }
 
-/*не знаю нужно или нет - дублирует или нет, оно отдельно работает также
- как и .content__card-link_current:active, которого нет в html
-.content__card-link:active .content__video-card-description-container {
+.content__card-link:active {
   background-color: #545050;
-}*/
+}
 
 .content__card-link:focus .content__video-card {
   outline: none;
@@ -283,9 +286,9 @@ ol {
   outline: 1px solid #fff;
 }
 
-.content__card-link_current:active { /*указан по ТЗ*/
+/*.content__card-link_current { 
   background-color: #545050;
-}
+}*/
 
 .content__video-card {
   max-width: 390px;
